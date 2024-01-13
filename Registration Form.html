@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Indian TechKeys Registration Form</title>
+</head>
+<body>
+    <div class="container" style="margin-top: 5ch;">
+        <div class="row">
+            <div class="col-6">
+                <img src="https://training.academy/uploads/expert/151127544248574.jpg">
+            </div>
+            <div class="col-6">
+				<h1 style="color: chocolate;text-align: left;font-size: large;">Indian TechKeys Registration Form</h1>
+                <div class="mb-4 mt-4">
+                    <input type="text" class="form-control" id="Name" placeholder="Enter User Name">
+					<span id="NameError" style="color:red"></span>
+                </div>
+                <div class="mb-4 mt-4">
+                    <input type="number" class="form-control" id="aadhar" placeholder="Enter Aadhar Number">
+					<span id="aadharError" style="color:red"></span>
+                </div>
+                <div class="mb-4">
+                    <input type="email" class="form-control" id="email" placeholder="Enter Email">
+					<span id="EmailError" style="color:red"></span>
+                </div>
+                <div class="mb-4">
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter Password">
+					<span id="PwdError" style="color:red"></span>
+                </div>
+                
+                <div class="mb-4">
+                    <button class="btn btn-danger" style="width: 100%;" onclick="SubmitDataFnc()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+	<script>
+		function SubmitDataFnc()
+		{
+			var NameValue = document.getElementById("Name").value
+			var NameRegEx = /^([a-zA-Z0-9]+|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{1,}|[a-zA-Z0-9]+\s{1}[a-zA-Z0-9]{3,}\s{1}[a-zA-Z0-9]{1,})$/
+			var NameCheck = NameValue.match(NameRegEx)
+			if(!NameCheck)
+			{
+				document.getElementById("NameError").innerHTML = "Please enter valid name"
+			}
+			else
+			{
+				document.getElementById("NameError").innerHTML = ""
+				
+			}
+
+			var EmailValue = document.getElementById("email").value
+            //Regular expression to check (you can search it in google)
+			var EmailRegEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+			var EmailCheck = EmailValue.match(EmailRegEx)
+			if(!EmailCheck)
+			{
+				document.getElementById("EmailError").innerHTML = "Please enter valid email"
+			}
+			else
+			{
+				document.getElementById("EmailError").innerHTML = ""
+				
+			}
+
+            var aadhar_regex = new RegExp(/^[2-9]\d{11}$/);   
+        var aadhar_value = document.getElementById("aadhar").value;
+        var result = aadhar_value.match(aadhar_regex);
+        if (!result) {
+          document.getElementById("aadharError").innerHTML =
+            "Please enter valid aadhar";
+        } else {
+          document.getElementById("aadharError").innerHTML = "";
+          
+        }
+      
+
+			var PwdValue = document.getElementById("pwd").value
+			var PwdRegEx = /^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9]{7,}$/
+			var PwdCheck = PwdValue.match(PwdRegEx)
+			if(!PwdCheck)
+			{
+				document.getElementById("PwdError").innerHTML = "Please enter valid password"
+			}
+			else
+			{
+				document.getElementById("PwdError").innerHTML = ""
+                return false
+			}
+            
+        }
+
+	</script>
+</body>
+</html>

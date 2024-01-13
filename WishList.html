@@ -1,0 +1,56 @@
+<html>
+    <head>
+    
+        <title>CRUD Operation</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="WL.css"> 
+    </head>
+    <body>
+        <!-- You can add any number of containers to the body. Also any number of rows. But you can add only 12 columns in a row. 
+        Each column can take the size such as col- entire screen size or from col-1 to col-12 size -->
+        <div class="container">
+            <div class="row">
+              <div class="col-6">
+                <h1>Wish Form</h1>
+        Wish: <input id="WshIptUid" class="form-control" type="text" name="Wish" placeholder="Enter your Wish">
+        <br>
+        Amount: <input id="AmtIptUid" class="form-control" type="number" name="Amount" placeholder="Enter Amount">
+        <br>
+        Deadline: <input id="DeadlineUid" class="form-control" type="date" name="Deadline" placeholder="Deadline">
+        <br>
+        <button id="AddWish" class="btn btn-success" type="button" onclick="AddWish()">Add</button>
+        <button id="UpdateWish" class="btn btn-warning" type="button" onclick="UpdateWish()">Update</button>
+              </div>
+              
+              
+              
+            </div>
+          </div>
+       
+        
+        <hr> 
+       <div class="container">
+        <div class="row">
+        <div class="col-12">
+            
+        <h1>Wish Table</h1>
+        <table class="table table-light table-hover table-bordered border-secondary" border="2" width="100%">
+            <thead>
+                <tr>
+                    <th scope="col">Wish</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Target</th>
+                    <th scope="col">Action</th>
+
+                </tr>
+            </thead>
+            <tbody id="TabBdyUid">
+                
+            </tbody>
+        </table>
+    </div>
+    </div>
+    </div>
+    <script src="WL.js"></script>
+        </body>
+</html>
